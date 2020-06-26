@@ -16,7 +16,7 @@ namespace PAGEmachine\Hairu\ViewHelpers\Form;
 
 use PAGEmachine\Hairu\LoginType;
 use TYPO3\CMS\Fluid\Core\Rendering\RenderingContext;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractTagBasedViewHelper;
 
 abstract class AbstractAuthenticationFormViewHelper extends AbstractTagBasedViewHelper
 {
@@ -66,8 +66,8 @@ abstract class AbstractAuthenticationFormViewHelper extends AbstractTagBasedView
         } else {
             $formActionUri = $this->getUriBuilder()
                 ->reset()
-                ->setTargetPageUid($this->arguments['pageUid'])
-                ->setTargetPageType($this->arguments['pageType'])
+                ->setTargetPageUid((integer)$this->arguments['pageUid'])
+                ->setTargetPageType((integer)$this->arguments['pageType'])
                 ->setNoCache($this->arguments['noCache'])
                 ->setUseCacheHash(!$this->arguments['noCacheHash'])
                 ->setSection($this->arguments['section'])
