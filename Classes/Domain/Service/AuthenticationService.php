@@ -46,7 +46,7 @@ class AuthenticationService implements SingletonInterface
      */
     public function isUserAuthenticated(): bool
     {
-        return $this->getFrontendController()->loginUser;
+        return $this->getFrontendController()->loginUser === 1 ? TRUE : FALSE;
     }
 
     /**
